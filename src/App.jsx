@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import './App.css';
 
 function App() {
   const [userInput, setUserInput] = useState("");
@@ -64,8 +65,8 @@ function App() {
   }
 
   return (
-    <div>
-      <h2>Start Chat</h2>
+    <main className="w-4/5 flex flex-col items-center justify-center m-auto bg-mutedBlack text-white">
+      <h2>YOUR AI PARTNER</h2>
       <div>
         {messages.map((msg, index) => (
           <p key={index}>
@@ -85,7 +86,7 @@ function App() {
       <button onClick={handleOnSend} disabled={isTyping}>
         {isTyping ? "Typing..." : "Send"}
       </button>
-    </div>
+    </main>
   );
 }
 
